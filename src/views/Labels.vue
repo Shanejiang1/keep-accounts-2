@@ -1,14 +1,14 @@
 <template>
-  <div>Labels.vue</div>
+  <div>
+    Labels.vue
+    <Nav></Nav>
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import {Component} from 'vue-property-decorator';
-
-@Component
-export default class Labels extends Vue {
-}
+export default {
+  name: 'Labels'
+};
 </script>
 
 <style lang="scss" scoped>
