@@ -1,7 +1,7 @@
 <template>
   <div class="nav-wrapper">
     <div class="content">
-    <slot></slot>
+      <slot></slot>
     </div>
     <Nav></Nav>
   </div>
@@ -14,14 +14,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.nav-wrapper{
-  border: 1px solid green;
+.nav-wrapper {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
-.content{
-  border: 1px solid blue;
+
+.content {
   overflow: auto;
   flex-grow: 1;
 }
