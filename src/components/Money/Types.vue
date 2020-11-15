@@ -43,8 +43,8 @@ export default class Types extends Vue {
     align-items: center;
 
     &.selected {
-      color: #62b27a;
-      background: #eef8f2;
+      color: #ffffff;
+      background: #62b27a;
     }
   }
 }
