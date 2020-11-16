@@ -80,7 +80,7 @@ export default class Tags extends Vue {
     button {
       background: transparent;
       border: none;
-      color: #333333;
+      color: #191919;
       border-bottom: 1px solid;
       padding: 0 4px;
     }
