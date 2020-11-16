@@ -4,7 +4,7 @@
     </NumberPad>
     <Types :value.sync="record.type">
     </Types>
-    <Notes @update:value="onUpdateNotes">
+    <Notes field-name="备注" placeholder="请输入备注内容" @update:value="onUpdateNotes">
     </Notes>
     <Tags :data-source.sync="tags" @update:value="onUpdateTags">
     </Tags>
