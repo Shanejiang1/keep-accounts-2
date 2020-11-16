@@ -5,6 +5,7 @@ import Labels from '@/views/Labels.vue';
 import Statistics from '@/views/Statistics.vue';
 import NotFound from '@/views/NotFound.vue';
 import Category from '@/views/Category.vue';
+import EditCategory from '@/views/EditCategory.vue';
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,10 @@ const routes = [
   {
     path:'/category',
     component: Category
+  },
+  {
+    path:'/category/edit',
+    component:EditCategory
   },
   {
     path: '*',
