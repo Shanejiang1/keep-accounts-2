@@ -7,9 +7,9 @@
       </router-link>
     </div>
     <ul class="current">
-      <li v-for="tag in dataSource" :key="tag"
+      <li v-for="tag in dataSource" :key="tag.id"
           :class="{selected: selectedTags.indexOf(tag)>=0}"
-          @click="toggle(tag)">{{ tag }}
+          @click="toggle(tag)">{{ tag.name }}
       </li>
     </ul>
   </div>
@@ -33,15 +33,6 @@ export default class Tags extends Vue {
     }
     this.$emit('update:value', this.selectedTags);
   }
-
-  // create() {
-  //   const name = window.prompt('请填写标签名');
-  //   if (name === '') {
-  //     window.alert('标签名不能为空');
-  //   } else if (this.dataSource) {
-  //     this.$emit('update:dataSource', [...this.dataSource, name]);
-  //   }
-  // }
 }
 </script>
 

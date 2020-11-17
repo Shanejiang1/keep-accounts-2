@@ -73,7 +73,8 @@ export default class EditCategory extends Vue {
   background: #ffffff;
   margin-top: 8px;
 }
-.button-wrapper{
+
+.button-wrapper {
   text-align: center;
   padding: 16px;
   margin-top: 44-16px;
