@@ -1,7 +1,7 @@
 <template>
   <div class="tags">
     <div class="new">
-      <router-link to="/category" class="item" active-class="selected">
+      <router-link to="/category">
         <Icon name="category"></Icon>
         <button>编辑标签</button>
       </router-link>
