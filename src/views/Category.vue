@@ -18,14 +18,13 @@ import {Component} from 'vue-property-decorator';
 import Button from '@/components/Button.vue';
 
 @Component({
-  components: {Button},
-  computed: {
-    tags() {
-      return this.$store.state.tagList;
-    }
-  }
+  components: {Button}
 })
 export default class Category extends Vue {
+  get tags() {
+    return this.$store.state.tagList;
+  }
+
   beforeCreate() {
     this.$store.commit('fetchTags');
   }
