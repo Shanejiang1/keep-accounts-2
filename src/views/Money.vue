@@ -8,7 +8,7 @@
       <FormItem field-name="备注" placeholder="请输入备注内容" @update:value="onUpdateNotes">
       </FormItem>
     </div>
-    <Tags :data-source.sync="tags" @update:value="onUpdateTags">
+    <Tags>
     </Tags>
   </Layout>
 </template>
@@ -34,10 +34,6 @@ export default class Money extends Vue {
 
   created() {
     this.$store.commit('fetchRecords');
-  }
-
-  onUpdateTags(value: string[]) {
-    this.record.tags = value;
   }
 
   onUpdateNotes(value: string) {
