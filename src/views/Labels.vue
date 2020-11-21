@@ -34,6 +34,14 @@ export default class Labels extends Vue {
 
   &.selected {
     background: #62b27a;
+
+    &::after {
+      display: none;
+    }
   }
+}
+
+::v-deep .interval-tabs-item {
+  height: 48px;
 }
 </style>
