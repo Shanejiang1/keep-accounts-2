@@ -17,6 +17,10 @@ import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 import Button from '@/components/Button.vue';
 
+const map: { [key: string]: string } = {
+  'tag name duplicated': '标签名重复'
+};
+
 @Component({
   components: {Button}
 })
@@ -33,6 +37,9 @@ export default class Category extends Vue {
     const name = window.prompt('请填写标签名');
     if (!name) {return window.alert('标签名不能为空');}
     this.$store.commit('createTag', name);
+    if (this.$store.state.createTagError) {
+      window.alert(map[this.$store.state.createTagError.message] || '未知错误');
+    }
   }
 }
 </script>
