@@ -68,6 +68,9 @@ export default class Money extends Vue {
 
 <style lang="scss" scoped>
 .notes {
-  padding: 10px 0;
+  padding: 2px 0;
+}
+.createdAt{
+  padding: 2px 0;
 }
 </style>
