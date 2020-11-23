@@ -102,7 +102,7 @@ export default class Labels extends Vue {
 }
 
 .title {
-  background: #f1f1f1;
+  background: #fbfbfb;
   color: #191919;
   @extend %item;
 }
