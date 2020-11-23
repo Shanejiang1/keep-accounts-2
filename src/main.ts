@@ -6,6 +6,7 @@ import store from './store';
 import Nav from '@/components/Nav.vue';
 import Layout from '@/components/Layout.vue';
 import Icon from '@/components/Icon.vue';
+import echarts from 'echarts';
 
 Vue.config.productionTip = false;
 
