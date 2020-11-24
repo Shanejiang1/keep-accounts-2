@@ -129,9 +129,5 @@ export default class Labels extends Vue {
       }
     }
   }
-
-  .interval-tabs-item {
-    height: 48px;
-  }
 }
 </style>
