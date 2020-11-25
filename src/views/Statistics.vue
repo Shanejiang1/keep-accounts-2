@@ -17,6 +17,8 @@ import Tabs from '@/components/Tabs.vue';
 import Chart from '@/components/Chart.vue';
 import _ from 'lodash';
 import day from 'dayjs';
+import clone from '@/lib/clone';
+import dayjs from 'dayjs';
 
 
 @Component({
@@ -34,11 +36,11 @@ export default class Statistics extends Vue {
     const array = [];
     for (let i = 0; i <= 29; i++) {
       const dateString = day(today).subtract(i, 'day').format('YYYY-MM-DD');
-      const found = _.find(this.recordList, {
-        createdAt: dateString
+      const found = _.find(this.groupedList, {
+        title: dateString
       });
       array.push({
-        key: dateString, value: found ? found.amount : 0
+        key: dateString, value: found ? found.total : 0
       });
     }
     array.sort((a, b) => {
@@ -91,6 +93,30 @@ export default class Statistics extends Vue {
         data: values,
       }],
     };
+  }
+  get recordList() {
+    return (this.$store.state as RootState).recordList;
+  }
+
+  get groupedList() {
+    const {recordList} = this;
+    const newList = clone(recordList).filter(r => r.type === this.type).sort((a, b) => dayjs(b.createdAt).valueOf() - dayjs(a.createdAt).valueOf());
+    if (newList.length === 0) {return [];}
+    type Result = { title: string; total?: number; items: RecordItem[] }[]
+    const result: Result = [{title: dayjs(newList[0].createdAt).format('YYYY-MM-DD'), items: [newList[0]]}];
+    for (let i = 1; i < newList.length; i++) {
+      const current = newList[i];
+      const last = result[result.length - 1];
+      if (dayjs(last.title).isSame(dayjs(current.createdAt), 'day')) {
+        last.items.push(current);
+      } else {
+        result.push({title: dayjs(current.createdAt).format('YYYY-MM-DD'), items: [current]});
+      }
+    }
+    result.map(group => {
+      group.total = group.items.reduce((sum, item) => sum + item.amount, 0);
+    });
+    return result;
   }
 
   type = '-';
