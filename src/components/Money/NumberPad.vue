@@ -5,7 +5,9 @@
       <button @click="inputContent">1</button>
       <button @click="inputContent">2</button>
       <button @click="inputContent">3</button>
-      <button @click="remove">删除</button>
+      <button @click="remove">
+        <Icon name="delete"></Icon>
+      </button>
       <button @click="inputContent">4</button>
       <button @click="inputContent">5</button>
       <button @click="inputContent">6</button>
@@ -80,11 +82,16 @@ export default class NumberPad extends Vue {
     @extend %clearFix;
 
     > button {
+      font-size: 20px;
       width: 25%;
       height: 64px;
       float: left;
       background: transparent;
       border: 3px solid #fafafa;
+      .icon {
+        width: 28px;
+        height: 28px;
+      }
 
       &.ok {
         height: 64*3px;

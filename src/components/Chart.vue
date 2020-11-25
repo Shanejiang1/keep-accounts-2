@@ -5,7 +5,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import {Component, Prop, Watch} from 'vue-property-decorator';
-import echarts, {EChartOption} from 'echarts';
+import echarts, {EChartOption, ECharts} from 'echarts';
 
 @Component
 export default class Chart extends Vue {

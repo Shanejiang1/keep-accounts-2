@@ -10,15 +10,15 @@
 <script lang="ts">
 import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
-import recordTypeList from '@/constants/recordTypeList';
 import Tabs from '@/components/Tabs.vue';
-// import dayjs from 'dayjs';
-// import clone from '@/lib/clone';
+import recordTypeList from '@/constants/recordTypeList';
+import dayjs from 'dayjs';
+import clone from '@/lib/clone';
 import Chart from '@/components/Chart.vue';
 import _ from 'lodash';
 import day from 'dayjs';
-import clone from '@/lib/clone';
-import dayjs from 'dayjs';
+
+
 
 
 @Component({
@@ -67,7 +67,7 @@ export default class Statistics extends Vue {
         show: true,
         type: 'category',
         data: keys,
-        axisTick: {alignWithLabel: true},
+        axisTick: {show: false},
         axisLine: {lineStyle: {color: '#191919'}},
         axisLabel: {
           formatter: function (value: string, index: number) {
@@ -119,6 +119,10 @@ export default class Statistics extends Vue {
     return result;
   }
 
+  beforeCreate() {
+    this.$store.commit('fetchRecords');
+  }
+
   type = '-';
   recordTypeList = recordTypeList;
 }
@@ -138,6 +142,19 @@ export default class Statistics extends Vue {
 
     &::-webkit-scrollbar {
       display: none;
+    }
+  }
+}
+::v-deep {
+  .type-tabs-item {
+    background: #f1f1f1;
+
+    &.selected {
+      background: #62b27a;
+
+      &::after {
+        display: none;
+      }
     }
   }
 }
