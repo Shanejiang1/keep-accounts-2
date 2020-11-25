@@ -2,7 +2,7 @@
   <div class="tags">
     <div class="new">
       <router-link to="/category">
-        <button>编辑标签</button>
+        <button>添加标签</button>
       </router-link>
     </div>
     <ul class="current">
