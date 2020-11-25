@@ -44,8 +44,6 @@ export default class Labels extends Vue {
       return '今天';
     } else if (day.isSame(now.subtract(1, 'day'), 'day')) {
       return '昨天';
-    } else if (day.isSame(now.subtract(2, 'day'), 'day')) {
-      return '前天';
     } else if (day.isSame(now, 'year')) {
       return day.format('M月D日');
     } else {

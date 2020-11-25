@@ -70,7 +70,8 @@ export default class Money extends Vue {
 .notes {
   padding: 2px 0;
 }
-.createdAt{
+
+.createdAt {
   padding: 2px 0;
 }
 </style>
