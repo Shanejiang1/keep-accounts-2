@@ -82,6 +82,7 @@ export default class NumberPad extends Vue {
     @extend %clearFix;
 
     > button {
+      touch-action: none;
       font-size: 20px;
       width: 25%;
       height: 64px;

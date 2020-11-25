@@ -18,3 +18,4 @@ module.exports = {
     config.module.rule('svg').exclude.add(dir) // 其他 svg loader 排除 icons 目录
   }
 }
+
