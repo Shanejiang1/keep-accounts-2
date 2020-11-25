@@ -33,7 +33,7 @@ export default class Statistics extends Vue {
     const today = new Date();
     const array = [];
     for (let i = 0; i <= 29; i++) {
-      const dateString = day(today).subtract(i, 'day').format('MM-DD');
+      const dateString = day(today).subtract(i, 'day').format('YYYY-MM-DD');
       const found = _.find(this.recordList, {
         createdAt: dateString
       });
@@ -66,7 +66,12 @@ export default class Statistics extends Vue {
         type: 'category',
         data: keys,
         axisTick: {alignWithLabel: true},
-        axisLine: {lineStyle: {color: '#191919'}}
+        axisLine: {lineStyle: {color: '#191919'}},
+        axisLabel: {
+          formatter: function (value: string, index: number) {
+            return value.substr(5);
+          }
+        }
       },
       yAxis: {
         type: 'value',
