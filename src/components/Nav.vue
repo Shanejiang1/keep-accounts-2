@@ -36,6 +36,7 @@ nav {
   display: flex;
   felx-direction: row;
   font-size: 12px;
+  background: #ffffff;
 
   > .item {
     padding: 2px 0;
