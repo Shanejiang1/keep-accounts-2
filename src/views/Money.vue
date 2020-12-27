@@ -48,7 +48,8 @@ export default class Money extends Vue {
 
   saveRecord() {
     if (!this.record.tags || this.record.tags.length === 0) {
-      return window.alert('请至少选择一个标签');
+      window.alert('请至少选择一个标签');
+      return;
     }
     this.$store.commit('createRecord', this.record);
     if (this.$store.state.createRecordError === null) {
@@ -70,7 +71,6 @@ export default class Money extends Vue {
 .notes {
   padding: 2px 0;
 }
-
 .createdAt {
   padding: 2px 0;
 }
