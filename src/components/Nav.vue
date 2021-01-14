@@ -1,6 +1,5 @@
 <template>
   <nav class="nav">
-
     <router-link to="/money" class="item" active-class="selected">
       <Icon name="money"></Icon>
       记账
@@ -15,16 +14,12 @@
       <Icon name="statistics"></Icon>
       统计
     </router-link>
-
-
   </nav>
 </template>
 
 <script lang="ts">
-
-
 export default {
-  name: 'Nav'
+  name: "Nav",
 };
 </script>
 
@@ -34,7 +29,7 @@ export default {
 nav {
   @extend %outerShadow;
   display: flex;
-  felx-direction: row;
+  flex-direction: row;
   font-size: 12px;
   background: #ffffff;
 
@@ -56,5 +51,4 @@ nav {
     color: $color-highlight;
   }
 }
-
 </style>
